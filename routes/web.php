@@ -25,6 +25,12 @@ Route::get('/', function () {
 Route::middleware(['auth'])->group(function(){
     Route::get('/dashboard',[BackendController::class,'index'])->name('index');
     Route::get('/publish-news',[BackendController::class,'publishNews'])->name('publish.news');
+    Route::post('/publish-news',[BackendController::class,'addNews']);
+
+    Route::get('/manage-news',[BackendController::class,'manageNews'])->name('manage.news');
+
+
+
     Route::get('/log-out',[BackendController::class,'logout'])->name('log.out');
 });
 
