@@ -21,25 +21,38 @@ class BackendController extends Controller
     //POST News
     public function addNews(Request $req){
         
-        $news = new publish_news();
+        
+        
+        if($req->hasFile('newsImage')){
 
-        $title = $req->file('title');
-        $subtitle = $req->file('subtitle');
+            $news = new publish_news();
+            //Upload to database 
+            $news->title = $req->title;
+            $news->subtitle = $req->subtitle;
+            $news->category = $req->category;
+            $news->content = $req->content;
+            //Image Upload
+            $image = $req->file('newsImage');
+            $name= time();
+            $folder = 'uploads/news/';
+            $filePath = $folder.$name.'.'.$image->getClientOriginalExtension();
+            $touch = Image::make($image);
+            $touch->save(public_path($filePath));
+            $news->image = $filePath;
+            $news->image_caption = $req->imageCaption;
+            $news->image_alt = $req->imageAlt;
+            $news->news_source = $req->newsSource;
+            $news->short_description = $req->shortDescription;
+            $news->tags = $req->tags;
+            $news->lead = $req->mainLead;
+            $news->status = $req->status;
+            $news->save();
 
-        $news->title = $req->title;
-        $news->subtitle = $req->subtitle;
-        $news->category = $req->category;
-        $news->content = $req->content;
-        $news->image = $req->newsImage;
-        $news->image_caption = $req->imageCaption;
-        $news->image_alt = $req->imageAlt;
-        $news->news_source = $req->newsSource;
-        $news->short_description = $req->shortDescription;
-        $news->tags = $req->tags;
-        $news->lead = $req->mainLead;
-        $news->status = $req->status;
-
-        $news->save();
+        }
+    
+        
+        
+        
 
         return redirect()->back();
     }
