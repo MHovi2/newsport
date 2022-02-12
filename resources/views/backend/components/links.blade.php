@@ -4,7 +4,7 @@
   <link rel="stylesheet" href="{{ url('/assets/backend/css/style.css') }}">
   <link rel="stylesheet" href="{{ url('/assets/backend/css/components.css') }}">
   <!-- Custom style CSS -->
-  <link rel="stylesheet" href="{{ url('/assets/backend/css/custom.css') }}">
+  
   <link rel='shortcut icon' type='image/x-icon' href="{{url('/assets/backend/img/favicon.ico')}}" />
   
 
@@ -27,3 +27,4 @@
 
 
 @endswitch
+<link rel="stylesheet" href="{{ url('/assets/backend/css/custom.css') }}">

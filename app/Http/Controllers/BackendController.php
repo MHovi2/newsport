@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\publish_news;
+use App\Models\add_category;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\ImageManagerStatic as Image;
@@ -49,11 +51,6 @@ class BackendController extends Controller
             $news->save();
 
         }
-    
-        
-        
-        
-
         return redirect()->back();
     }
 
@@ -69,7 +66,22 @@ class BackendController extends Controller
         $request->session()->invalidate();
     
         $request->session()->regenerateToken();
-            return redirect('/login');
-        }
+        return redirect('/login');
+    }
+
+    //Add Category Get Method..
+    public function addCategory(){
+        return view('backend.add_category');
+    }
+    //Add Category POST meathod ..
+    public function postCategory(Request $req){
+        $category = new add_category();
+        $category->category_name = $req->categoryName;
+        $category->menu_order = $req->menuOrder;
+        $category->save();
+
+        return redirect()->back();
+     }
+
 
 }

@@ -21,15 +21,15 @@
         </li>
         <li class="dropdown">
             <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                data-feather="briefcase"></i><span>Opinions</span></a>
+                data-feather="briefcase"></i><span>Category</span></a>
             <ul class="dropdown-menu">
-              <li><a class="nav-link" href="widget-chart.html">Chart Widgets</a></li>
-              <li><a class="nav-link" href="widget-data.html">Data Widgets</a></li>
+              <li><a class="nav-link" href="{{route('add.category')}}">Add Category</a></li>
+              <li><a class="nav-link" href="widget-data.html">Manage Category</a></li>
             </ul>
           </li>
           <li class="dropdown">
             <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                data-feather="briefcase"></i><span>Category</span></a>
+                data-feather="briefcase"></i><span>Option</span></a>
             <ul class="dropdown-menu">
               <li><a class="nav-link" href="widget-chart.html">Chart Widgets</a></li>
               <li><a class="nav-link" href="widget-data.html">Data Widgets</a></li>
