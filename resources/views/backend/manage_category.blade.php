@@ -37,26 +37,20 @@
                             <table class="table table-striped" id="table-1">
                                 <thead>
                                     <tr>
-                                        <th class="text-center">
-                                            #
-                                        </th>
-                                        <th>Image</th>
-                                        <th>Ttile</th>
-                                        <th>Author</th>
-                                        <th>Date</th>
-                                        <th>Status</th>
+                                       
+                                        <th>ID</th>
+                                        <th>Category Name</th>
+                                        <th>Slug</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($news as $info)
+                                    @foreach ($category as $info)
 
                                     <tr>
                                         <td>
-                                            {{ $s++ }}
+                                            {{ $info['id'] }}
                                         </td>
-                                        <td scope="row"><img class="m-1" src="{{ $info['image'] }}" alt=""
-                                                width="150px"></td>
-                                        <td>{{ $info['title'] }}
+                                        <td>{{ $info['category_name'] }}
                                             <div class="table-links">
                                                 <a href="#">View</a>
                                                 <div class="bullet"></div>
@@ -65,11 +59,8 @@
                                                 <a href="{{ 'manage-news/' . $info['id'] }}" class="text-danger">Trash</a>
                                             </div>
                                         </td>
-                                        <td>Redesign homepage</td>
-                                        <td>{{ $info['created_at'] }}</td>
-                                        <td>
-                                            <div class="badge badge-success badge-shadow">Published</div>
-                                        </td>
+                                        <td>{{ $info['menu_order'] }}</td>
+                                        
                                     </tr>
 
                                     @endforeach

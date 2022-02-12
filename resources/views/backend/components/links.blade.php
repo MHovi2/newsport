@@ -16,7 +16,7 @@
             <link rel="stylesheet"
                 href="{{ url('/') }}/assets/backend/bundles/bootstrap-tagsinput/dist/bootstrap-tagsinput.css">
             @break;
-      @case('manage-news')
+      @case('manage-news'||'manage-category'||'new-trash')
             <link rel="stylesheet"
                 href="{{ url('/') }}/assets/backend/bundles/datatables/datatables.min.css">
             <link rel="stylesheet"

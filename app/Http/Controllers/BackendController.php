@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\publish_news;
 use App\Models\add_category;
+use App\Models\manage_category;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -57,19 +58,10 @@ class BackendController extends Controller
 
     //GET Manage News..
     public function manageNews(){
-        $data = publish_news::all();
+        $data = publish_news::where('status','=',1)->get();
         return view('backend.manage_news',['news'=>$data]);
     }
 
-    //Custom Log Out
-    public function logout(Request $request){
-        Auth::logout();
-    
-        $request->session()->invalidate();
-    
-        $request->session()->regenerateToken();
-        return redirect('/login');
-    }
 
     //Add Category Get Method..
     public function addCategory(){
@@ -83,7 +75,32 @@ class BackendController extends Controller
         $category->save();
 
         return redirect()->back();
-     }
+    }
+    //Get Manage Category
+    public function manageCategory(Request $req){
+        $data = add_category::all();
+        return view('backend.manage_category',['category'=> $data]);
+    }
+
+    //News Trash GET meathod...
+    public function newsTrash(){
+        $data = publish_news::where('status','=',0)->get();
+        return view('backend.news_trash',['news'=>$data]);
+    }
+
+
+
+    //Custom Log Out
+    public function logout(Request $request){
+        Auth::logout();
+    
+        $request->session()->invalidate();
+    
+        $request->session()->regenerateToken();
+        return redirect('/login');
+    }
+
+    
 
 
 }

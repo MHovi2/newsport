@@ -29,7 +29,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Basic DataTables</h4>
+                        <h4>News Trash</h4>
                     </div>
 
                     <div class="card-body">
@@ -60,15 +60,15 @@
                                             <div class="table-links">
                                                 <a href="#">View</a>
                                                 <div class="bullet"></div>
-                                                <a href="#">Edit</a>
+                                                <a href="#">Restore</a>
                                                 <div class="bullet"></div>
-                                                <a href="{{ 'manage-news/' . $info['id'] }}" class="text-danger">Trash</a>
+                                                <a href="#" class="text-danger">Delete</a>
                                             </div>
                                         </td>
                                         <td>Redesign homepage</td>
-                                        <td>{{ $info['created_at'] }}</td>
+                                        <td>{{ $info['created_at']}}</td>
                                         <td>
-                                            <div class="badge badge-success badge-shadow">Published</div>
+                                            <div class="badge badge-danger badge-shadow">Draft</div>
                                         </td>
                                     </tr>
 

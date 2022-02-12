@@ -16,7 +16,7 @@
           <ul class="dropdown-menu">
             <li><a class="nav-link" href="{{route('publish.news')}}">Publish News</a></li>
             <li><a class="nav-link" href="{{route('manage.news')}}">Manage News</a></li>
-            <li><a class="nav-link" href="widget-data.html">Trash Bin</a></li>
+            <li><a class="nav-link" href="{{route('news.trash')}}">Trash Bin</a></li>
           </ul>
         </li>
         <li class="dropdown">
@@ -24,7 +24,7 @@
                 data-feather="briefcase"></i><span>Category</span></a>
             <ul class="dropdown-menu">
               <li><a class="nav-link" href="{{route('add.category')}}">Add Category</a></li>
-              <li><a class="nav-link" href="widget-data.html">Manage Category</a></li>
+              <li><a class="nav-link" href="{{route('manage.category')}}">Manage Category</a></li>
             </ul>
           </li>
           <li class="dropdown">

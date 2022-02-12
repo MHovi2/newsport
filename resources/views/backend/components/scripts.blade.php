@@ -25,18 +25,18 @@
  <script src="{{ url('/') }}/assets/backend/js/page/create-post.js"></script>
 
 @break;
-@case('manage-news')
-   
-@break
-
-@default
-
-@endswitch
+@case('manage-news' ||'manage-category'||'new-trash')
 <script src="{{ url('/') }}/assets/backend/bundles/datatables/datatables.min.js"></script>
 <script src="{{ url('/') }}/assets/backend/bundles/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js"></script>
 <script src="{{ url('/') }}/assets/backend/bundles/jquery-ui/jquery-ui.min.js"></script>
 <!-- Page Specific JS File -->
 <script src="{{ url('/') }}/assets/backend/js/page/datatables.js"></script>
+@break
+
+@default
+
+@endswitch
+
 <!-- Template JS File -->
 <script src="{{url('/')}}/assets/backend/js/scripts.js"></script>
 <!-- Custom JS File -->
