@@ -2,7 +2,7 @@
     <aside id="sidebar-wrapper">
       <div class="sidebar-brand">
         <a href="index.html"> <img alt="image" src="assets/backend/img/logo.png" class="header-logo" /> <span
-            class="logo-name">Otika</span>
+            class="logo-name">News Port</span>
         </a>
       </div>
       <ul class="sidebar-menu">

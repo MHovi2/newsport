@@ -5,4 +5,7 @@
 .form-group .control-label, .form-group>label{
     text-align: right;
 }
+table, tr, td{
+    border:none;
+   }
 

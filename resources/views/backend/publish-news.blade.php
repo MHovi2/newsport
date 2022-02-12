@@ -29,9 +29,9 @@
                                 <div class="col-sm-12 col-md-7">
                                     <select class="form-control selectric" name="category" required>
                                         <option value="#">---Select---</option>
-                                        <option value="0">Tech</option>
-                                        <option value="1">News</option>
-                                        <option value="2">Political</option>
+                                         @foreach ($category as $info)
+                                             <option value="{{$info['id']}}">{{$info['category_name']}}</option>
+                                         @endforeach
                                     </select>
                                 </div>
                             </div>
@@ -42,11 +42,14 @@
                                 </div>
                             </div>
                             <div class="form-group row mb-4">
-                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">News Image</label>
+                                <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Thumbnail</label>
                                 <div class="col-sm-12 col-md-7">
-                                    <input type="file" class="form-control" name="newsImage" required>
+                                  <div id="image-preview" class="image-preview">
+                                    <label for="image-upload" id="image-label">Choose File</label>
+                                    <input type="file" name="newsImage" id="image-upload">
+                                  </div>
                                 </div>
-                            </div>
+                              </div>
                             <div class="form-group row mb-4">
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Image
                                     Caption</label>
@@ -103,7 +106,7 @@
                                 <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Status</label>
                                 <div class="col-sm-12 col-md-7">
                                     <select class="form-control form-select" name="status" required>
-                                        <option>--Select--</option>
+                                        <option value="00">--Select--</option>
                                         <option value="0">Publish</option>
                                         <option value="1">Draft</option>
                                     </select>

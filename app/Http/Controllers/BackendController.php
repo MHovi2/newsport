@@ -17,7 +17,8 @@ class BackendController extends Controller
     }
     //GET Publish News Controller
     public function publishNews(){
-        return view('backend.publish-news');
+        $data = add_category::all();
+        return view('backend.publish-news',['category'=>$data]);
     }
 
     //POST News
@@ -56,7 +57,8 @@ class BackendController extends Controller
 
     //GET Manage News..
     public function manageNews(){
-        return view('backend.manage_news');
+        $data = publish_news::all();
+        return view('backend.manage_news',['news'=>$data]);
     }
 
     //Custom Log Out
