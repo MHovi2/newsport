@@ -31,7 +31,6 @@
                     <div class="card-header">
                         <h4>News Trash</h4>
                     </div>
-
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-striped" id="table-1">

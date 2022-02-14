@@ -12,7 +12,7 @@
         </li>
         <li class="dropdown">
           <a href="#" class="menu-toggle nav-link has-dropdown"><i
-              data-feather="briefcase"></i><span>News</span></a>
+              data-feather="file"></i><span>News</span></a>
           <ul class="dropdown-menu">
             <li><a class="nav-link" href="{{route('publish.news')}}">Publish News</a></li>
             <li><a class="nav-link" href="{{route('manage.news')}}">Manage News</a></li>
@@ -21,7 +21,7 @@
         </li>
         <li class="dropdown">
             <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                data-feather="briefcase"></i><span>Category</span></a>
+                data-feather="grid"></i><span>Category</span></a>
             <ul class="dropdown-menu">
               <li><a class="nav-link" href="{{route('add.category')}}">Add Category</a></li>
               <li><a class="nav-link" href="{{route('manage.category')}}">Manage Category</a></li>
@@ -29,7 +29,7 @@
           </li>
           <li class="dropdown">
             <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                data-feather="briefcase"></i><span>Option</span></a>
+                data-feather="users"></i><span>Openion</span></a>
             <ul class="dropdown-menu">
               <li><a class="nav-link" href="widget-chart.html">Chart Widgets</a></li>
               <li><a class="nav-link" href="widget-data.html">Data Widgets</a></li>
@@ -37,24 +37,21 @@
           </li>
         <li class="menu-header">Media</li>
         <li class="dropdown">
-            <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                data-feather="briefcase"></i><span>Gallery</span></a>
+            <a href="{{route('gallery')}}" class="nav-link"><i
+                data-feather="image"></i><span>Gallery</span></a>
+            
+          </li>
+          <li class="dropdown">
+            <a href="#" class="nav-link"><i
+                data-feather="video"></i><span>Video</span></a>
             <ul class="dropdown-menu">
               <li><a class="nav-link" href="widget-chart.html">Chart Widgets</a></li>
               <li><a class="nav-link" href="widget-data.html">Data Widgets</a></li>
             </ul>
           </li>
           <li class="dropdown">
-            <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                data-feather="briefcase"></i><span>Video</span></a>
-            <ul class="dropdown-menu">
-              <li><a class="nav-link" href="widget-chart.html">Chart Widgets</a></li>
-              <li><a class="nav-link" href="widget-data.html">Data Widgets</a></li>
-            </ul>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                data-feather="briefcase"></i><span>File Manager</span></a>
+            <a href="#" class="nav-link"><i
+                data-feather="folder"></i><span>File Manager</span></a>
             <ul class="dropdown-menu">
               <li><a class="nav-link" href="widget-chart.html">Chart Widgets</a></li>
               <li><a class="nav-link" href="widget-data.html">Data Widgets</a></li>
@@ -63,7 +60,7 @@
           <li class="menu-header">Others</li>
           <li class="dropdown">
             <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                data-feather="briefcase"></i><span>Misc</span></a>
+                data-feather="airplay"></i><span>Misc</span></a>
             <ul class="dropdown-menu">
               <li><a class="nav-link" href="widget-chart.html">Chart Widgets</a></li>
               <li><a class="nav-link" href="widget-data.html">Data Widgets</a></li>
@@ -71,7 +68,7 @@
           </li>
           <li class="dropdown">
             <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                data-feather="briefcase"></i><span>Image Ads</span></a>
+                data-feather="play-circle"></i><span>Image Ads</span></a>
             <ul class="dropdown-menu">
               <li><a class="nav-link" href="widget-chart.html">Chart Widgets</a></li>
               <li><a class="nav-link" href="widget-data.html">Data Widgets</a></li>
@@ -79,7 +76,7 @@
           </li>
           <li class="dropdown">
             <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                data-feather="briefcase"></i><span>My Profile</span></a>
+                data-feather="user-check"></i><span>My Profile</span></a>
             <ul class="dropdown-menu">
               <li><a class="nav-link" href="widget-chart.html">Chart Widgets</a></li>
               <li><a class="nav-link" href="widget-data.html">Data Widgets</a></li>
@@ -87,21 +84,17 @@
           </li>
           <li class="dropdown">
             <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                data-feather="briefcase"></i><span>Settings</span></a>
+                data-feather="settings"></i><span>Settings</span></a>
             <ul class="dropdown-menu">
               <li><a class="nav-link" href="widget-chart.html">Chart Widgets</a></li>
               <li><a class="nav-link" href="widget-data.html">Data Widgets</a></li>
             </ul>
           </li>
           <li class="dropdown">
-            <a href="#" class="menu-toggle nav-link has-dropdown"><i
-                data-feather="briefcase"></i><span>Visit Frontend</span></a>
-            <ul class="dropdown-menu">
-              <li><a class="nav-link" href="widget-chart.html">Chart Widgets</a></li>
-              <li><a class="nav-link" href="widget-data.html">Data Widgets</a></li>
+            <a href="#" class="nav-link"><i
+                data-feather="slack"></i><span>Visit Frontend</span></a>
             </ul>
           </li>
-        
       
       </ul>
     </aside>

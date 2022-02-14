@@ -109,7 +109,6 @@
                                         <option value="#">---Select---</option>
                                         <option value="0">Publish</option>
                                         <option value="1">Draft</option>
-                                         
                                     </select>
                                 </div>
                             </div>

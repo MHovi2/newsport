@@ -14,7 +14,9 @@ class BackendController extends Controller
 {
     //Index Controller
     public function index(){
-        return view('backend.index');
+        $news = publish_news::all()->count();
+        $category = add_category::all()->count();
+        return view('backend.index',compact('news','category'));
     }
     //GET Publish News Controller
     public function publishNews(){
@@ -86,6 +88,12 @@ class BackendController extends Controller
     public function newsTrash(){
         $data = publish_news::where('status','=',0)->get();
         return view('backend.news_trash',['news'=>$data]);
+    }
+
+    //Gallery GET method ..
+    public function gallery(){
+        $data = publish_news::all();
+        return view('backend.gallery',['image'=>$data]);
     }
 
 

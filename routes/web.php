@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BackendController;
+use App\Http\Controllers\FrontendController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,13 +15,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth'])->name('dashboard');
+
+Route::get('/',[FrontendController::class,'index'])->name('index');
 
 Route::middleware(['auth'])->group(function(){
     Route::get('/dashboard',[BackendController::class,'index'])->name('index');
@@ -36,8 +39,10 @@ Route::middleware(['auth'])->group(function(){
     Route::post('/add-category',[BackendController::class,'postCategory']);
     Route::get('/manage-category',[BackendController::class,'manageCategory'])->name('manage.category');
 
-
     Route::get('/news-trash',[BackendController::class,'newsTrash'])->name('news.trash');
+
+    Route::get('/gallery',[BackendController::class,'gallery'])->name('gallery');
+
     
 
 

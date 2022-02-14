@@ -37,10 +37,11 @@
                             <table class="table table-striped" id="table-1">
                                 <thead>
                                     <tr>
-                                       
+                                        
                                         <th>ID</th>
                                         <th>Category Name</th>
-                                        <th>Slug</th>
+                                        <th>Slag</th>
+                                        <th>Status</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -60,7 +61,9 @@
                                             </div>
                                         </td>
                                         <td>{{ $info['menu_order'] }}</td>
-                                        
+                                        <td>
+                                            <div class="badge badge-success badge-shadow">Published</div>
+                                        </td>
                                     </tr>
 
                                     @endforeach
