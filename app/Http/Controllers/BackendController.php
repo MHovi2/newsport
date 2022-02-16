@@ -9,6 +9,7 @@ use App\Models\manage_category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Intervention\Image\ImageManagerStatic as Image;
+use Session;
 
 class BackendController extends Controller
 {
@@ -53,15 +54,21 @@ class BackendController extends Controller
             $news->lead = $req->mainLead;
             $news->status = $req->status;
             $news->save();
+            
 
         }
+
         return redirect()->back();
     }
 
     //GET Manage News..
     public function manageNews(){
-        $data = publish_news::where('status','=',1)->get();
-        return view('backend.manage_news',['news'=>$data]);
+        $count_publish = publish_news::where('status','=',1)->count();
+        $count_trash = publish_news::where('status','=',0)->count();
+        $count_all = publish_news::all()->count();
+
+        $news = publish_news::where('status','=',1)->get();
+        return view('backend.manage_news',compact('news','count_publish','count_trash','count_all'));
     }
 
 
@@ -76,18 +83,24 @@ class BackendController extends Controller
         $category->menu_order = $req->menuOrder;
         $category->save();
 
+        Session::flash('message','Data insurt successfully');
+
         return redirect()->back();
     }
     //Get Manage Category
     public function manageCategory(Request $req){
+        $count_category = add_category::all()->count();
         $data = add_category::all();
-        return view('backend.manage_category',['category'=> $data]);
+        return view('backend.manage_category',['category'=> $data,'count_category'=>$count_category]);
     }
 
     //News Trash GET meathod...
     public function newsTrash(){
-        $data = publish_news::where('status','=',0)->get();
-        return view('backend.news_trash',['news'=>$data]);
+        $count_publish = publish_news::where('status','=',1)->count();
+        $count_trash = publish_news::where('status','=',0)->count();
+        $count_all = publish_news::all()->count();
+        $news = publish_news::where('status','=',0)->get();
+        return view('backend.news_trash',compact('news','count_publish','count_trash','count_all'));
     }
 
     //Gallery GET method ..

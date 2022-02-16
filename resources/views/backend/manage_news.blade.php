@@ -9,16 +9,16 @@
                     <div class="card-body">
                         <ul class="nav nav-pills">
                             <li class="nav-item">
-                                <a class="nav-link active" href="#">All <span class="badge badge-white">10</span></a>
+                                <a class="nav-link " href="{{route('manage.news')}}">All <span
+                                        class="badge badge-primary">{{$count_all}}</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Draft <span class="badge badge-primary">2</span></a>
+                                <a class="nav-link active" href="{{route('manage.news')}}">Publish<span
+                                        class="badge badge-white">{{$count_publish}}</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Pending <span class="badge badge-primary">3</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Trash <span class="badge badge-primary">0</span></a>
+                                <a class="nav-link" href="{{route('news.trash')}}">Trash <span
+                                        class="badge badge-primary">{{$count_trash}}</span></a>
                             </li>
                         </ul>
                     </div>
@@ -49,7 +49,6 @@
                                 </thead>
                                 <tbody>
                                     @foreach ($news as $info)
-
                                     <tr>
                                         <td>
                                             {{ $s++ }}
@@ -62,7 +61,8 @@
                                                 <div class="bullet"></div>
                                                 <a href="#">Edit</a>
                                                 <div class="bullet"></div>
-                                                <a href="{{ 'manage-news/' . $info['id'] }}" class="text-danger">Trash</a>
+                                                <a href="{{ 'manage-news/' . $info['id'] }}"
+                                                    class="text-danger">Trash</a>
                                             </div>
                                         </td>
                                         <td>Redesign homepage</td>
@@ -73,6 +73,8 @@
                                     </tr>
 
                                     @endforeach
+                                    
+
 
                                 </tbody>
                             </table>

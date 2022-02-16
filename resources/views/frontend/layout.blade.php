@@ -170,6 +170,7 @@
                </div>
                <div class="line-bottom mt-4 mb-4"></div>
                <div class="ad-box">
+                  <h1>This is a Add</h1>
                </div>
                <div class="line-bottom mt-4 mb-4"></div>
                <a class="news-bar">
@@ -178,7 +179,7 @@
                         <img src="https://images.prothomalo.com/prothomalo-bangla%2F2020-09%2F4dc58fa1-4e01-4fe8-bb4e-366278f87917%2Fgovt.png?rect=0%2C0%2C1600%2C1067&amp;w=500&amp;auto=format%2Ccompress&amp;fmt=webp">
                      </div>
                      <div class="col-8 col-md-6 pl-2">
-                        <h1> ২০২১ সালে ছুটি ২২ দিন, ৭ দিনই শুক্র–শনি </h1>
+                        <h1> Ovi সালে ছুটি ২২ দিন, ৭ দিনই শুক্র–শনি </h1>
                         <small><i class="fas fa-clock    "></i> ১০ মিনিট আগে</small>
                      </div>
                   </div>

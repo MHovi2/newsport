@@ -9,6 +9,7 @@
                         <h4>Publish News</h4>
                     </div>
                     <div class="card-body">
+                        
                         <form action="publish-news" method="POST" enctype="multipart/form-data">
                             @csrf
 
@@ -91,7 +92,7 @@
                                         <label class="form-check-label" for="inlineCheckbox1">Main Lead</label>
                                     </div>
                                     <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="2"
+                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="0"
                                             name="subLead">
                                         <label class="form-check-label" for="inlineCheckbox2">Sub Lead</label>
                                     </div>
@@ -107,8 +108,8 @@
                                 <div class="col-sm-12 col-md-7">
                                     <select class="form-control selectric" name="status" required>
                                         <option value="#">---Select---</option>
-                                        <option value="0">Publish</option>
-                                        <option value="1">Draft</option>
+                                        <option value="1">Publish</option>
+                                        <option value="0">Draft</option>
                                     </select>
                                 </div>
                             </div>

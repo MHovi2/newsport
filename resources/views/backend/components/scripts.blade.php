@@ -4,11 +4,7 @@
  <script src="{{url('/')}}/assets/backend/bundles/apexcharts/apexcharts.min.js"></script>
  <!-- Page Specific JS File -->
  <script src="{{url('/')}}/assets/backend/js/page/index.js"></script>
- 
 
- 
-
- 
 @switch(Request::segment('1'))
 
 @case('publish-news')

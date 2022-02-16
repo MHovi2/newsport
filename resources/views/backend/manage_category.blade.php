@@ -1,4 +1,4 @@
-{{$s=1;}}
+{{ $s=1; }}
 @extends('backend.layout')
 @section('main')
 <div class="main-content">
@@ -9,16 +9,11 @@
                     <div class="card-body">
                         <ul class="nav nav-pills">
                             <li class="nav-item">
-                                <a class="nav-link active" href="#">All <span class="badge badge-white">10</span></a>
+                                <a class="nav-link " href="#">All <span class="badge badge-primary">{{$count_category}}</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Draft <span class="badge badge-primary">2</span></a>
+                                <a class="nav-link active" href="#">Publish <span class="badge badge-white">{{$count_category}}</span></a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Pending <span class="badge badge-primary">3</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Trash <span class="badge badge-primary">0</span></a>
                             </li>
                         </ul>
                     </div>
@@ -37,7 +32,6 @@
                             <table class="table table-striped" id="table-1">
                                 <thead>
                                     <tr>
-                                        
                                         <th>ID</th>
                                         <th>Category Name</th>
                                         <th>Slag</th>
@@ -45,8 +39,8 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach ($category as $info)
-
+                                    @if (count($category) > 0)
+                                    @foreach($category as $info)
                                     <tr>
                                         <td>
                                             {{ $info['id'] }}
@@ -57,7 +51,8 @@
                                                 <div class="bullet"></div>
                                                 <a href="#">Edit</a>
                                                 <div class="bullet"></div>
-                                                <a href="{{ 'manage-news/' . $info['id'] }}" class="text-danger">Trash</a>
+                                                <a href="{{ 'manage-news/' . $info['id'] }}"
+                                                    class="text-danger">Trash</a>
                                             </div>
                                         </td>
                                         <td>{{ $info['menu_order'] }}</td>
@@ -67,6 +62,10 @@
                                     </tr>
 
                                     @endforeach
+                                    @else
+                                        <p>NO Data Found</p>
+                                    @endif
+                                    
 
                                 </tbody>
                             </table>

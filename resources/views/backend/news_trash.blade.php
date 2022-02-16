@@ -9,16 +9,13 @@
                     <div class="card-body">
                         <ul class="nav nav-pills">
                             <li class="nav-item">
-                                <a class="nav-link active" href="#">All <span class="badge badge-white">10</span></a>
+                                <a class="nav-link " href="{{route('manage.news')}}">All <span class="badge badge-primary">{{$count_all}}</span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Draft <span class="badge badge-primary">2</span></a>
+                                <a class="nav-link" href="{{route('manage.news')}}">Draft <span class="badge badge-primary">{{$count_publish}}</span></a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Pending <span class="badge badge-primary">3</span></a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Trash <span class="badge badge-primary">0</span></a>
+                            <li class="nav-item ">
+                                <a class="nav-link active" href="{{route('news.trash')}}">Trash <span class="badge badge-white">{{$count_trash}}</span></a>
                             </li>
                         </ul>
                     </div>
