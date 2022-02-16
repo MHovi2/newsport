@@ -23,7 +23,12 @@ use Illuminate\Support\Facades\Route;
 //     return view('dashboard');
 // })->middleware(['auth'])->name('dashboard');
 
+//Index Route
 Route::get('/',[FrontendController::class,'index'])->name('index');
+//News Page Route..
+Route::get('/news',[FrontendController::class,'news'])->name('news');
+//Category Page Route..
+Route::get('/category',[FrontendController::class,'category'])->name('category');
 
 Route::middleware(['auth'])->group(function(){
     Route::get('/dashboard',[BackendController::class,'index'])->name('index');
