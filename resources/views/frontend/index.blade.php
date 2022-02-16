@@ -6,26 +6,34 @@
           <div class="row">
              <div class="col-md-8 line-right">
                 <a class="news-box" href="#">
+                   @foreach ($news as $key=>$info)
+                   @if ($key == 0)
                    <div class="row">
-                      <div class="col-md-6 col-12">
-                         <img src="https://images.prothomalo.com/prothomalo-bangla%2F2020-09%2F4dc58fa1-4e01-4fe8-bb4e-366278f87917%2Fgovt.png?rect=0%2C0%2C1600%2C1067&amp;w=500&amp;auto=format%2Ccompress&amp;fmt=webp">
-                      </div>
-                      <div class="col-md-6 col-12 mt-4 mt-md-0">
-                         <h1> ২০২১ সালে ছুটি ২২ দিন, ৭ দিনই শুক্র–শনি </h1>
-                         <p>২০২১ সালে সাধারণ ছুটি ১৪ দিন। তার মধ্যে ছয় দিন পড়েছে সাপ্তাহিক ছুটির দিনে। এ ছাড়া আগামী বছর নির্বাহী আদেশে ছুটি আছে আট দিন। তার মধ্যে এক দিন পড়েছে সাপ্তাহিক ছুটির দিনে। ৩৪ মিনিট আগে
-                         </p>
-                         <small><i class="fas fa-clock    "></i> ১০ মিনিট আগে</small>
-                      </div>
-                   </div>
+                     <div class="col-md-6 col-12">
+                        <img src="{{$info['image']}}">
+                     </div>
+                     <div class="col-md-6 col-12 mt-4 mt-md-0">
+                        <h1> {{$info['title']}} </h1>
+                        <p> {{Str::substr($info['content'], 0, 200);}}
+                        </p>
+                        <small><i class="fas fa-clock    "></i> ১০ মিনিট আগে</small>
+                     </div>
+                  </div>
+                  @endif
+                   @endforeach
+                   
                 </a>
              </div>
              <div class="col-md-4 mt-4 mt-md-0">
+               @foreach ($news as $key=>$info)
+               @if ($key == 1)
                 <a class="news-box" href="#">
-                   <h1> ২০২১ সালে ছুটি ২২ দিন, ৭ দিনই শুক্র–শনি </h1>
-                   <p>২০২১ সালে সাধারণ ছুটি ১৪ দিন। তার মধ্যে ছয় দিন পড়েছে সাপ্তাহিক ছুটির দিনে। এ ছাড়া আগামী বছর নির্বাহী আদেশে ছুটি আছে আট দিন। তার মধ্যে এক দিন পড়েছে সাপ্তাহিক ছুটির দিনে। ৩৪ মিনিট আগে
-                   </p>
+                   <h1> {{$info['title']}} </h1>
+                   <p>{{Str::substr($info['content'], 0, 200);}}</p>
                    <small><i class="fas fa-clock    "></i> ১০ মিনিট আগে</small>
                 </a>
+                @endif
+                @endforeach
              </div>
              <div class="col-md-12">
                 <div class="line-bottom mt-4 mb-4">
@@ -33,30 +41,17 @@
              </div>
           </div>
           <div class="row">
+            @foreach ($news as $key=>$info)
+            @if ($key > 1 && $key < 5)
              <div class="col-md-4 line-right">
                 <a class="news-box" href="#">
-                   <h1> ২০২১ সালে ছুটি ২২ দিন, ৭ দিনই শুক্র–শনি </h1>
-                   <p>২০২১ সালে সাধারণ ছুটি ১৪ দিন। তার মধ্যে ছয় দিন পড়েছে সাপ্তাহিক ছুটির দিনে। এ ছাড়া আগামী বছর নির্বাহী আদেশে ছুটি আছে আট দিন। তার মধ্যে এক দিন পড়েছে সাপ্তাহিক ছুটির দিনে। ৩৪ মিনিট আগে
-                   </p>
-                   <small><i class="fas fa-clock    "></i> ১০ মিনিট আগে</small>
+                   <h1>{{$info['title']}}</h1>
+                   <p>{{Str::substr($info['content'], 0, 200);}}</p>
+                   <small><i class="fas fa-clock    "></i>{{$info['created_at']}}</small>
                 </a>
              </div>
-             <div class="col-md-4 line-right mt-4 mt-md-0">
-                <a class="news-box" href="#">
-                   <h1> ২০২১ সালে ছুটি ২২ দিন, ৭ দিনই শুক্র–শনি </h1>
-                   <p>২০২১ সালে সাধারণ ছুটি ১৪ দিন। তার মধ্যে ছয় দিন পড়েছে সাপ্তাহিক ছুটির দিনে। এ ছাড়া আগামী বছর নির্বাহী আদেশে ছুটি আছে আট দিন। তার মধ্যে এক দিন পড়েছে সাপ্তাহিক ছুটির দিনে। ৩৪ মিনিট আগে
-                   </p>
-                   <small><i class="fas fa-clock    "></i> ১০ মিনিট আগে</small>
-                </a>
-             </div>
-             <div class="col-md-4 mt-4 mt-md-0">
-                <a class="news-box" href="#">
-                   <h1> ২০২১ সালে ছুটি ২২ দিন, ৭ দিনই শুক্র–শনি </h1>
-                   <p>২০২১ সালে সাধারণ ছুটি ১৪ দিন। তার মধ্যে ছয় দিন পড়েছে সাপ্তাহিক ছুটির দিনে। এ ছাড়া আগামী বছর নির্বাহী আদেশে ছুটি আছে আট দিন। তার মধ্যে এক দিন পড়েছে সাপ্তাহিক ছুটির দিনে। ৩৪ মিনিট আগে
-                   </p>
-                   <small><i class="fas fa-clock    "></i> ১০ মিনিট আগে</small>
-                </a>
-             </div>
+             @endif
+             @endforeach
              <div class="col-md-12">
                 <div class="line-bottom mt-4 mb-4">
                 </div>
@@ -154,6 +149,7 @@
              </div>
           </div>
        </div>
+       {{-- Side Bar Section --}}
        <div class="col-xl-3 col-12 ">
           <div class="ad-box mt-4 mt-md-0">
           </div>
