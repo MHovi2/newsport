@@ -67,7 +67,7 @@ class BackendController extends Controller
         $count_trash = publish_news::where('status','=',0)->count();
         $count_all = publish_news::all()->count();
 
-        $news = publish_news::where('status','=',1)->get();
+        $news = publish_news::where('status','=',1)->orderBy('id','DESC')->get();
         return view('backend.manage_news',compact('news','count_publish','count_trash','count_all'));
     }
 

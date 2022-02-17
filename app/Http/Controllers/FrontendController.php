@@ -16,9 +16,34 @@ class FrontendController extends Controller
             ['status','=',1],
             ['lead','=',1],
         ])
-        ->orderBy('id','DESC')
-        ->get();
-        return view('frontend.index',['news'=>$news]);
+            ->orderBy('id','DESC')
+            ->get();
+
+        $polytics = publish_news::where([
+            ['category','=',2],
+            ['status','=',1],
+        ])
+            ->orderBy('id','DESC')
+            ->get();
+        $international = publish_news::where([
+                ['category','=',3],
+                ['status','=',1],
+        ])
+                ->orderBy('id','DESC')
+                ->get();
+        $national = publish_news::where([
+                    ['category','!=',3],
+                    ['status','=',1],
+        ])
+                    ->orderBy('id','DESC')
+                    ->get();
+        $entertainment = publish_news::where([
+            ['category','=',4],
+            ['status','=',1],
+        ])
+            ->orderBy('id','DESC')
+            ->get();
+        return view('frontend.index',compact('news','polytics','international','national','entertainment'));
     }
 
     //News Controller 

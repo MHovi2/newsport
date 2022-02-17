@@ -65,7 +65,7 @@
                                                     class="text-danger">Trash</a>
                                             </div>
                                         </td>
-                                        <td>Redesign homepage</td>
+                                        <td>{{ $info['category'] }}</td>
                                         <td>{{ $info['created_at'] }}</td>
                                         <td>
                                             <div class="badge badge-success badge-shadow">Published</div>
