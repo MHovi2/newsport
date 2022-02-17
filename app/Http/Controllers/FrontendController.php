@@ -32,24 +32,34 @@ class FrontendController extends Controller
                 ->orderBy('id','DESC')
                 ->get();
         $national = publish_news::where([
-                    ['category','!=',3],
-                    ['status','=',1],
+                ['category','!=',3],
+                ['status','=',1],
         ])
-                    ->orderBy('id','DESC')
-                    ->get();
+                ->orderBy('id','DESC')
+                ->get();
         $entertainment = publish_news::where([
-            ['category','=',4],
-            ['status','=',1],
+                ['category','=',4],
+                ['status','=',1],
         ])
-            ->orderBy('id','DESC')
-            ->get();
-        return view('frontend.index',compact('news','polytics','international','national','entertainment'));
+                ->orderBy('id','DESC')
+                ->get();
+        $sports = publish_news::where([
+                ['category','=',5],
+                ['status','=',1],
+        ])
+                ->orderBy('id','DESC')
+                ->get();
+                
+        return view('frontend.index',compact('news','polytics','international','national','entertainment','sports'));
     }
 
     //News Controller 
-    public function news(){
-        return view('frontend.news-page');
+    public function news($id){
+        $news = publish_news::find($id);
+        $more = publish_news::where('category','=',$id)->get();
+        return view('frontend.news-page',compact('news','more'));
     }
+    
 
     //Category Controller 
     public function category(){

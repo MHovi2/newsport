@@ -9,7 +9,7 @@
 
 
                     <a href="">
-                        <img src="uploads/frontend/logo.png" style="width: 220px;">
+                        <img src="../uploads/frontend/logo.png" style="width: 220px;">
                     </a>
                     <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio blanditiis quia ex molestiae ad ipsum hic voluptate nam accusamus repellendus culpa repudiandae animi ipsam est, nemo vitae id maxime! Similique.</p>
                     <ul class="contact-details mb-2">

@@ -26,7 +26,7 @@ use Illuminate\Support\Facades\Route;
 //Index Route
 Route::get('/',[FrontendController::class,'index'])->name('index');
 //News Page Route..
-Route::get('/news',[FrontendController::class,'news'])->name('news');
+Route::get('/news/{id}',[FrontendController::class,'news'])->name('news');
 //Category Page Route..
 Route::get('/category',[FrontendController::class,'category'])->name('category');
 
