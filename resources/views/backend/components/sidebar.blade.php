@@ -83,12 +83,9 @@
             </ul>
           </li>
           <li class="dropdown">
-            <a href="#" class="menu-toggle nav-link has-dropdown"><i
+            <a href="{{route('setting')}}" class="nav-link"><i
                 data-feather="settings"></i><span>Settings</span></a>
-            <ul class="dropdown-menu">
-              <li><a class="nav-link" href="widget-chart.html">Chart Widgets</a></li>
-              <li><a class="nav-link" href="widget-data.html">Data Widgets</a></li>
-            </ul>
+            
           </li>
           <li class="dropdown">
             <a href="#" class="nav-link"><i

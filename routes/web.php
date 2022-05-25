@@ -48,7 +48,12 @@ Route::middleware(['auth'])->group(function(){
 
     Route::get('/gallery',[BackendController::class,'gallery'])->name('gallery');
 
-    
+
+    Route::get('setting',[BackendController::class,'settingView'])->name('setting');
+    Route::post('setting',[BackendController::class,'settingUpdate']);
+
+
+    Route::get('trash/{id}',[BackendController::class,'trash'])->name('trash');
 
 
     Route::get('/log-out',[BackendController::class,'logout'])->name('log.out');

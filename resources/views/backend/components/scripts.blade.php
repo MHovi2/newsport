@@ -7,7 +7,7 @@
 
 @switch(Request::segment('1'))
 
-@case('publish-news')
+@case('publish-news' || 'setting')
     <!-- Page Specific JS File -->
     <!-- JS Libraies -->
     <script src="{{ url('/') }}/assets/backend/bundles/summernote/summernote-bs4.js"></script>

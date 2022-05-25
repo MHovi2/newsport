@@ -4,7 +4,7 @@
 
   <!--  spacific CSS -->
   @switch(Request::segment('1'))
-      @case('publish-news')
+      @case('publish-news' || 'setting')
             <link rel="stylesheet"
                 href="{{ url('assets/backend/bundles/summernote/summernote-bs4.css') }}">
             <link rel="stylesheet"

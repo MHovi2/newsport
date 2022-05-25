@@ -53,7 +53,7 @@
                                         <td>
                                             {{ $s++ }}
                                         </td>
-                                        <td scope="row"><img class="m-1" src="{{ $info['image'] }}" alt=""
+                                        <td scope="row"><img class="m-1" src="{{ $info->image }}" alt=""
                                                 width="150px"></td>
                                         <td>{{ $info['title'] }}
                                             <div class="table-links">
@@ -61,7 +61,7 @@
                                                 <div class="bullet"></div>
                                                 <a href="#">Edit</a>
                                                 <div class="bullet"></div>
-                                                <a href="{{ 'manage-news/' . $info['id'] }}"
+                                                <a href="{{ route('trash', ['id' => $info->id]) }}"
                                                     class="text-danger">Trash</a>
                                             </div>
                                         </td>

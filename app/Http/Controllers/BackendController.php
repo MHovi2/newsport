@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\publish_news;
 use App\Models\add_category;
 use App\Models\manage_category;
+use App\Models\setting;
+use App\Models\publish_news as Post;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -109,6 +111,45 @@ class BackendController extends Controller
         return view('backend.gallery',['image'=>$data]);
     }
 
+    //settings Get method
+    public function settingView(){
+        $data = setting::find(1);
+        return view('backend.setting',['data'=>$data]);
+    }
+
+    //Setting Update
+    public function settingUpdate(Request $req){
+        $data = setting::find(1);
+        
+        
+        $name= time();
+        $folder = 'uploads/frontend/';
+        $logo = $req->file('siteLogo');
+        
+        $logoPath = $folder.$name.'.'.$logo->getClientOriginalExtension();
+        $touch1 = Image::make($logo);
+        $touch1->save(public_path($logoPath));
+        $data->site_logo = $logoPath;
+
+        $favicon = $req->file('favIcon');
+        $faviconPath = $folder.$name.'.'.$favicon->getClientOriginalExtension();
+        $touch2 = Image::make($favicon);
+        $touch2->save(public_path($faviconPath));
+        $data->favicon = $faviconPath;
+        
+        $data->about_us = $req->aboutUs;
+        $data->contuct_us = $req->contuctUs;
+        $data->privacy_policy = $req->privacyPolicy;
+
+        $data->save();
+
+        return  redirect()->back();
+        
+
+
+    }
+
+
 
 
     //Custom Log Out
@@ -122,6 +163,12 @@ class BackendController extends Controller
     }
 
     
+    public function trash(Request $request){
+        $trash = Post::findOrFail($request->id);
+        $trash->status = 0;
+        $trash->save();
 
+        return redirect()->back();
+    }
 
 }
